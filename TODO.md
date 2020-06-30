@@ -5,3 +5,4 @@ TODO List:
 - improve documentation (Javadoc + Git)
 - add Dockerization
 - implement better architecture style (Ports & Adapters)
+- create specific exceptions instead of IllegalArgument
