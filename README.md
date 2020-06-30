@@ -11,7 +11,7 @@ The application consists of two APIs. One for Product management and the other f
 
 ### Product API
 
-####Creating a product
+#### Creating a product
 
 A product consists of Name, Description, Quantity and a Type.
 
@@ -29,19 +29,19 @@ The attribute `quantity` indicates the available stock quantity for the product.
 }
 ```
 
-####Removing a product
+#### Removing a product
 
 To remove a product just the id is required.
 
 [DELETE] -> `localhost:8080/product/{id}`
 
-####Getting a product
+#### Getting a product
 
 To get information of a product just the id is required.
 
 [GET] -> `localhost:8080/product/{id}`
 
-####Updating stock of a product
+#### Updating stock of a product
 
 To update the stock quantity it's required to pass the product `id` in the path, and send the new quantity as request body.
 
@@ -49,3 +49,31 @@ To update the stock quantity it's required to pass the product `id` in the path,
 ```json
 20
 ```
+
+### Order API
+
+#### Creating an Order
+
+An order consists of products (ids) and quantity.
+
+The products **should exist** in the Database, and the quantity in stock **should be greater** than the quantity ordered.
+
+[POST] -> `localhost:8080/order`
+```json
+{
+    "items": [{
+        "id":"1",
+        "quantity":2
+    },{
+        "id":"2",
+        "quantity":4
+    }]
+}
+```
+
+#### Getting an Order
+
+To get information of an Order just the id is required.
+
+[GET] -> `localhost:8080/order/{id}`
+
